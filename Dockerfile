@@ -21,8 +21,6 @@ RUN apt-get install -y \
 
 RUN cd /usr/lib/arm-linux-gnueabihf/ && sudo ln -sv libreadline.so.8.0 libreadline.so.7
 
-RUN sudo updatedb
-
 ARG USER=docker
 ENV HOME /home/$USER
 
