@@ -1,6 +1,8 @@
-FROM arm32v7/ubuntu:20.04
+FROM resin/armv7hf-debian
 
 ENV VERSION=7.0.2
+
+RUN [ "cross-build-start" ]
 
 RUN apt-get update -y 
 RUN DEBIAN_FRONTEND="noninteractive" apt-get -y install tzdata
@@ -46,3 +48,4 @@ LABEL description="Running Safex Core Node"
 LABEL info="See https://github.com/safex/safexcore/"
 
 CMD sudo ./safexd-arm-$VERSION --in-peers=50 --out-peers=50 --data-dir=/data
+RUN [ "cross-build-end" ]
