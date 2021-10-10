@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu:20.04
+FROM arm32v7/debian:buster
 
 ENV VERSION=7.0.2
 
